@@ -1,0 +1,174 @@
+<div class="mb-20" fxLayout="row" fxLayout.lt-md="column" fxFlex fxLayoutGap="20px">
+        <div fxFlex>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Chamado: 1</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                      
+                        <p>Olá, preciso pagar minha conta da TIM, porém ela ja está vencida e meu namorado não conseguiu pagar no banco dele pelo motivo aqui especificado</p>
+                       
+                                  </mat-card-content>
+            </mat-card>
+        </div>
+        <div fxFlex>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Resulução</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                        <button mat-raised-button color="primary">Resolver</button>
+                        <button style="left: 15px;" mat-raised-button color="warn">Pendenciar</button>
+                        <p>Data de Abertura: 17/03/2018</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+    <br>
+    <p>Mensagens</p>
+    <br>
+
+
+                <div>            
+                    <mat-card>
+                            <p>Ticket:</p>
+                            <p style="margin-left: 15px; margin-bottom: 15px;">Ok, traga sua conta amanhã que vou realizar a impressão da mesma para poder ser efetuado o pagamento em uma casa lotérica. </p>
+                            <p style="float: right;">Usuário: Vitor Hugo</p>
+                            <h4>Data: 17/03/2018</h4>
+                        </mat-card>
+                    <br>
+                </div>
+                       
+                <div>            
+                        <mat-card>
+                                <p>Ticket:</p>
+                                <p style="margin-left: 15px; margin-bottom: 15px;">Ok, Obrigado pela atenção, vou levar amanha.</p>
+                                <p style="float: right;">Usuário: Jeniffer</p>
+                                <h4>Data: 17/03/2018</h4>
+                            </mat-card>
+                        <br>
+                    </div>
+                    <div>            
+                            <mat-card>
+                                    <p>Ticket:</p>
+                                    <p style="margin-left: 15px; margin-bottom: 15px;">Essa é uma mensagem muito grande Essa é uma mensagem muito grande Essa é uma mensagem muito grande Essa é uma mensagem muito grande </p>
+                                    <p style="float: right;">Usuário: Vitor Hugo</p>
+                                    <h4>Data: 17/03/2018</h4>
+                                </mat-card>
+                            <br>
+                     </div>
+
+                    <div>
+                                <mat-card>
+                                        <mat-form-field style="width: 100%;">
+                                                <textarea style=" height: 100px;" matInput placeholder="Enviar Mensagem" [formControl]="observacao"></textarea>
+                                                <button style="width: 155px" mat-raised-button color="primary">Enviar</button>
+                                              </mat-form-field>
+                                </mat-card>
+                    </div>         
+                      
+
+                       
+
+                      
+                       
+
+<!--<br>
+
+<div class="mb-20" fxFlex fxLayout="row" fxLayout.lt-md="column">
+    <div fxFlex>
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            100%
+        </mat-card>
+    </div>
+</div>
+
+<div class="mb-20" fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div fxFlex *ngFor="let i of [50, 50]">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            {{i}}%
+        </mat-card>
+    </div>
+</div>
+
+<div class="mb-20" fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div [fxFlex]="i" *ngFor="let i of [33.33, 33.33, 33.33]">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            {{i}}%
+        </mat-card>
+    </div>
+</div>
+
+<div class="mb-20" fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div [fxFlex]="i" *ngFor="let i of [25, 25, 25, 25]">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            {{i}}%
+        </mat-card>
+    </div>
+</div>
+
+<div class="mb-20" fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div [fxFlex]="i" *ngFor="let i of [12.5, 12.5, 12.5, 12.5, 12.5, 12.5, 12.5, 12.5]">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            {{i}}%
+        </mat-card>
+    </div>
+</div>
+
+<div class="mb-20" fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div [fxFlex]="15">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            15%
+        </mat-card>
+    </div>
+    <div [fxFlex]="25">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            25%
+        </mat-card>
+    </div>
+    <div [fxFlex]="60">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            60%
+        </mat-card>
+    </div>
+</div>
+
+ <div fxFlexFill [fxLayout]="'row wrap'" fxLayoutGap="20px grid">
+    <div fxFlex="25">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            A
+        </mat-card>
+    </div>
+    <div fxFlex="25">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            B
+        </mat-card>
+    </div>
+    <div fxFlex="25">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            C
+        </mat-card>
+    </div>
+    <div fxFlex="25">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            D
+        </mat-card>
+    </div>
+    <div fxFlex="25">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            E
+        </mat-card>
+    </div>
+    <div fxFlex="25">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            F
+        </mat-card>
+    </div>
+    <div fxFlex="25">
+        <mat-card fxFlexFill fxLayoutAlign="center center">
+            G
+        </mat-card>
+    </div>
+</div>
+-->

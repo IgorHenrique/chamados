@@ -1,0 +1,33 @@
+
+<mat-card class="mb-20">
+  <mat-card-header>
+      <mat-card-title>Novo chamado</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+      
+    <form class="hidden-sm" style="width: 150px" [formGroup]="formGroup" (ngSubmit)="abrirChamado(); $event.preventDefault()">
+      <mat-form-field style="width: 350px">
+          <input matInput [placeholder]="'Titulo'" formControlName="titulo" [formControl]="titulo">
+      </mat-form-field>
+
+      <mat-form-field class="">
+          <mat-select placeholder="Serviço" [formControl]="servico" formControlName="servico">
+              <mat-option *ngFor="let servico of servicos"  [value]="servico.codigo">
+                  {{ servico.descricao }}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+    
+    
+    
+    <mat-form-field class="obs">
+      <textarea style="height: 100px;" formControlName="observacao" matInput placeholder="Observação" [formControl]="observacao"></textarea>
+    
+    </mat-form-field>
+    <br><br>
+    <button mat-raised-button color="primary" >Abrir Chamado</button>
+  </form>
+  </mat-card-content>
+</mat-card>
