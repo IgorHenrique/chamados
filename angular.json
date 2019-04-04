@@ -88,7 +88,8 @@
               "node_modules/chart.js/dist/Chart.js"
             ],
             "styles": [
-                "styles.scss"
+                "styles.scss",
+                "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "assets": [
               "src/assets",

@@ -1,33 +1,32 @@
-
-<mat-card class="mb-20">
+<mat-card [ngClass]="{'mb-20': true, 'divDisabled': isLoading}">
   <mat-card-header>
-      <mat-card-title>Novo chamado</mat-card-title>
+    <mat-card-title>Novo chamado</mat-card-title>
   </mat-card-header>
-
+  
   <mat-card-content>
-      
-    <form class="hidden-sm" style="width: 150px" [formGroup]="formGroup" (ngSubmit)="abrirChamado(); $event.preventDefault()">
-      <mat-form-field style="width: 350px">
-          <input matInput [placeholder]="'Titulo'" formControlName="titulo" [formControl]="titulo">
-      </mat-form-field>
+      <form class="hidden-sm" style="width: 150px" [formGroup]="formGroup"
+        (ngSubmit)="abrirChamado(); $event.preventDefault()">
+        <mat-form-field style="width: 350px">
+          <input matInput [placeholder]="'Titulo'" formControlName="titulo">
+        </mat-form-field>
 
-      <mat-form-field class="">
-          <mat-select placeholder="Serviço" [formControl]="servico" formControlName="servico">
-              <mat-option *ngFor="let servico of servicos"  [value]="servico.codigo">
-                  {{ servico.descricao }}
-              </mat-option>
+        <mat-form-field class="">
+          <mat-select placeholder="Serviço" formControlName="servico">
+            <mat-option *ngFor="let servico of servicos" [value]="servico.codigo">
+              {{ servico.descricao }}
+            </mat-option>
           </mat-select>
-      </mat-form-field>
+        </mat-form-field>
+        <mat-spinner *ngIf="isLoading" class="loading">
+        </mat-spinner>
 
-    
-    
-    
-    <mat-form-field class="obs">
-      <textarea style="height: 100px;" formControlName="observacao" matInput placeholder="Observação" [formControl]="observacao"></textarea>
-    
-    </mat-form-field>
-    <br><br>
-    <button mat-raised-button color="primary" >Abrir Chamado</button>
-  </form>
-  </mat-card-content>
+          <mat-form-field class="obs">
+            <textarea style="height: 100%;" formControlName="observacao" matInput placeholder="Observação"></textarea>
+
+          </mat-form-field>
+          <br><br>
+          <button mat-raised-button color="primary">Abrir Chamado</button>
+          
+      </form>
+    </mat-card-content>      
 </mat-card>

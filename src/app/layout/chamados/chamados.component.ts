@@ -10,19 +10,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./chamados.component.scss']
 })
 export class ChamadosComponent implements OnInit {
+  public isLoading: boolean;
   servicos : Servico[];
   formGroup : FormGroup;
   constructor(public servicoService : ServicosService,
     public chamadoService : ChamadosService,
     public formBuilder : FormBuilder) {
-
-
       this.formGroup = formBuilder.group({
         titulo: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
         servico: ['', [Validators.required]],
-        mensagem:['teste'],
         observacao: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
-        usuario: ['1', [Validators.required, Validators.email]],    
+        usuario: ['1', [Validators.required]],    
         
       });
      }
@@ -38,10 +36,12 @@ export class ChamadosComponent implements OnInit {
   }
 
   abrirChamado(){
-  
-   this.chamadoService.insert(this.formGroup.value).subscribe(response => {
-     alert("Ok")
-   })
+    if(!this.formGroup.invalid) {
+        this.isLoading = true;
+        this.chamadoService.insert(this.formGroup.value).subscribe(response => {
+        this.isLoading = false;
+      })
+    }
   }
 
 }

@@ -6,6 +6,7 @@ import { ChamadosRoutingModule } from './chamados-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialComponentsModule } from '../material-components/material-components.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatSlideToggleModule,
-
+    MatProgressSpinnerModule,
     MatInputModule,
     MatCardModule,
     MatCheckboxModule,
