@@ -1,8 +1,7 @@
 .obs{
-    width: 70%;
+    width: 100%;
     height: 100px;
 }
-
 
 .loading {
     margin-left: 40%;
@@ -14,6 +13,5 @@
 .divDisabled {
     cursor: not-allowed;
     opacity: 0.5;
-    pointer-events:none;
-    
+    pointer-events:none;   
 }

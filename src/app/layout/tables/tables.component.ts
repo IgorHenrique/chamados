@@ -31,7 +31,8 @@ export class TablesComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         this.findAll();
-        
+        //let idChamado = this.route.snapshot.params['id'];
+        //console.log(idChamado);
     }
 
     findAll(){

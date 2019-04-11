@@ -46,18 +46,24 @@ export class DashboardComponent implements OnInit {
        }
 
     ngOnInit() {
+        this.findInfor();
         this.findAll();
-        console.log(this.chamado.length);
     }
 
     findAll(){
         this.chamadoService.findAll().subscribe(response => {
             this.chamado = response;
             this.chamadosResgistrados = response.length;
+            console.log(response);
           
-        })
+        });
     }
 
+    findInfor() {
+        this.chamadoService.findInfo().subscribe(response => {
+            console.log(response);
+        });
+    }
 
 
 

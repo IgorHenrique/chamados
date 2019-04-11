@@ -31,7 +31,7 @@ const routes: Routes = [
                 loadChildren: './chamados/chamados.module#ChamadosModule'
             },
             {
-                path: 'meus-chamados',
+                path: 'meus-chamados/:id',
                 loadChildren: './meus-chamados/grid.module#GridModule'
             },
             {

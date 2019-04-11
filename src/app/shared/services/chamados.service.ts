@@ -16,6 +16,10 @@ export class ChamadosService {
     return this.http.get<Chamado[]>(`${API_CONFIG.baseUrl}/chamados`)
   }
 
+  findInfo() : Observable<any> {
+    return this.http.get<any>(`${API_CONFIG.baseUrl}/informacoes`);
+  }
+
   findById(id : string): Observable<Chamado>{
     return this.http.get<Chamado>(`${API_CONFIG.baseUrl}/chamados/${id}`)
   }

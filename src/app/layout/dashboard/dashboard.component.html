@@ -1,13 +1,13 @@
 <div class="mb-20" fxLayout="row" fxLayout.lt-md="column" fxFlex fxLayoutGap="20px">
     <div fxFlex>
-        <app-stat [bgClass]="'danger'" *ngIf="chamado" [icon]="'dashboard'" [count]="13" [label]="'Chamados Finalizados'"></app-stat>
+        <app-stat [bgClass]="'danger'" *ngIf="chamado" [icon]="'dashboard'" [count]="0" [label]="'Chamados Finalizados'"></app-stat>
     </div>
 
     <div fxFlex>
         <app-stat [bgClass]="'success'" *ngIf="chamado" [icon]="'shopping_cart'" [count]="chamadosResgistrados" [label]="'Chamados Registrados'"></app-stat>
     </div>
     <div fxFlex>
-        <app-stat [bgClass]="'info'" *ngIf="chamado" [icon]="'contact_support'" [count]="13" [label]="'Chamados Pendentes'"></app-stat>
+        <app-stat [bgClass]="'info'" *ngIf="chamado" [icon]="'contact_support'" [count]="0" [label]="'Chamados Pendentes'"></app-stat>
     </div>
 </div>
 
@@ -26,7 +26,7 @@
             </ng-container>
             <ng-container matColumnDef="titulo">
                 <th mat-header-cell *matHeaderCellDef> Ticket </th>
-                <td mat-cell *matCellDef="let chamado"> <a [routerLink]="['/meus-chamados']">{{chamado.titulo}}</a>  </td>
+                <td mat-cell *matCellDef="let chamado"> <a [routerLink]="['/meus-chamados/', chamado.codigo]">{{chamado.titulo}}</a>  </td>
             </ng-container>
             <ng-container matColumnDef="data">
                 <th mat-header-cell *matHeaderCellDef> Sla </th>

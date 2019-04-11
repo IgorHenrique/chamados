@@ -2,11 +2,11 @@
         <div fxFlex>
             <mat-card>
                 <mat-card-header>
-                    <mat-card-title>Chamado: 1</mat-card-title>
+                    <mat-card-title>Chamado: {{ chamado.codigo }}</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                       
-                        <p>Olá, preciso pagar minha conta da TIM, porém ela ja está vencida e meu namorado não conseguiu pagar no banco dele pelo motivo aqui especificado</p>
+                        <p>{{ chamado.observacao }}</p>
                        
                                   </mat-card-content>
             </mat-card>
@@ -14,12 +14,12 @@
         <div fxFlex>
             <mat-card>
                 <mat-card-header>
-                    <mat-card-title>Resulução</mat-card-title>
+                    <mat-card-title>Resolução</mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                         <button mat-raised-button color="primary">Resolver</button>
                         <button style="left: 15px;" mat-raised-button color="warn">Pendenciar</button>
-                        <p>Data de Abertura: 17/03/2018</p>
+                        <p>Data de Abertura: {{ chamado.data }}</p>
                 </mat-card-content>
             </mat-card>
         </div>
@@ -28,8 +28,6 @@
     <br>
     <p>Mensagens</p>
     <br>
-
-
                 <div>            
                     <mat-card>
                             <p>Ticket:</p>

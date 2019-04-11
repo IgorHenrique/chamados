@@ -3,7 +3,7 @@
     <mat-card-title>Novo chamado</mat-card-title>
   </mat-card-header>
   
-  <mat-card-content>
+  <mat-card-content style="width: 100%">
       <form class="hidden-sm" style="width: 150px" [formGroup]="formGroup"
         (ngSubmit)="abrirChamado(); $event.preventDefault()">
         <mat-form-field style="width: 350px">
@@ -20,10 +20,10 @@
         <mat-spinner *ngIf="isLoading" class="loading">
         </mat-spinner>
 
-          <mat-form-field class="obs">
-            <textarea style="height: 100%;" formControlName="observacao" matInput placeholder="Observação"></textarea>
-
+          <mat-form-field>
+            <textarea formControlName="observacao" matInput placeholder="Observação" style="width: 700px"></textarea>
           </mat-form-field>
+          
           <br><br>
           <button mat-raised-button color="primary">Abrir Chamado</button>
           
