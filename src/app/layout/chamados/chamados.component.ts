@@ -3,6 +3,7 @@ import { ChamadosService } from 'src/app/shared/services/chamados.service';
 import { Servico } from 'src/app/model/servico';
 import { ServicosService } from 'src/app/shared/services/servicos.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chamados',
@@ -15,7 +16,8 @@ export class ChamadosComponent implements OnInit {
   formGroup : FormGroup;
   constructor(public servicoService : ServicosService,
     public chamadoService : ChamadosService,
-    public formBuilder : FormBuilder) {
+    public formBuilder : FormBuilder,
+    private router : Router) {
       this.formGroup = formBuilder.group({
         titulo: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
         servico: ['', [Validators.required]],
@@ -40,6 +42,7 @@ export class ChamadosComponent implements OnInit {
         this.isLoading = true;
         this.chamadoService.insert(this.formGroup.value).subscribe(response => {
         this.isLoading = false;
+        this.router.navigate(['/inicio']);
       })
     }
   }

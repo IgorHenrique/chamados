@@ -35,6 +35,8 @@ export class DashboardComponent implements OnInit {
     places: Array<any> = [];
     chamado : Chamado[];
     chamadosResgistrados : number;
+    chamadosFinalizados : number;
+    
 
     applyFilter(filterValue: string) {
         filterValue = filterValue.trim(); // Remove whitespace
@@ -50,6 +52,7 @@ export class DashboardComponent implements OnInit {
         this.findAll();
     }
 
+
     findAll(){
         this.chamadoService.findAll().subscribe(response => {
             this.chamado = response;
@@ -62,6 +65,7 @@ export class DashboardComponent implements OnInit {
     findInfor() {
         this.chamadoService.findInfo().subscribe(response => {
             console.log(response);
+            this.chamadosFinalizados = response.qtdChamadoFinalizado;
         });
     }
 

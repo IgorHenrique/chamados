@@ -1,8 +1,9 @@
 import { Chamado } from "./chamados";
+import { Usuario } from "./usuario";
 
-export interface Mensagem{
+export class Mensagem{
     codigo : string;
     mensagem : string;
-    data : Date;
     chamado : Chamado;
+    usuario: Usuario
 }

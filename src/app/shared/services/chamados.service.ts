@@ -17,7 +17,7 @@ export class ChamadosService {
   }
 
   findInfo() : Observable<any> {
-    return this.http.get<any>(`${API_CONFIG.baseUrl}/informacoes`);
+    return this.http.get<any>(`${API_CONFIG.baseUrl}/chamados/informacoes`);
   }
 
   findById(id : string): Observable<Chamado>{
@@ -33,6 +33,11 @@ export class ChamadosService {
         responseType:'text'
       }
     )}
+
+    finalizar(chamado: any) {
+      return this.http.put( `${API_CONFIG.baseUrl}/chamados/`
+      + chamado.codigo + '/FINALIZADO', {})
+    }
 
 
 }
