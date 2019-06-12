@@ -7,7 +7,7 @@
       <form class="hidden-sm" style="width: 150px" [formGroup]="formGroup"
         (ngSubmit)="abrirChamado(); $event.preventDefault()">
         <mat-form-field style="width: 350px">
-          <input matInput [placeholder]="'Titulo'" formControlName="titulo">
+          <input matInput [placeholder]="'Titulo'" formControlName="titulo" [(ngModel)] = "titulo">
         </mat-form-field>
 
         <mat-form-field class="">
@@ -21,12 +21,13 @@
         </mat-spinner>
 
           <mat-form-field>
-            <textarea formControlName="observacao" matInput placeholder="Observação" style="width: 700px"></textarea>
+            <textarea formControlName="observacao" matInput placeholder="Observação" style="width: 700px"
+            [(ngModel)] = "observacao"></textarea>
           </mat-form-field>
           
           <br><br>
           <button mat-raised-button color="primary">Abrir Chamado</button>
-          
+          <input type="file" id="fileUpload" (change) = "lerArquivo($event)"/>
       </form>
     </mat-card-content>      
 </mat-card>
